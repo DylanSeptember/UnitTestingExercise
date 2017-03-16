@@ -57,18 +57,23 @@ public class AppTest
         assertEquals(1995,app.getYear());
     }
 
+    @org.junit.Test
     public void testSetGetName()
     {
         App app = new App();
         app.setName("Jack");
         assertEquals("Jack", app.getName());
     }
+
+    @org.junit.Test
     public void testSetGetSurname()
     {
         App app = new App();
         app.setSurname("Black");
         assertEquals("Black", app.getSurname());
     }
+
+    @org.junit.Test
     public void testSetGetPet()
     {
         App app = new App();
@@ -78,13 +83,14 @@ public class AppTest
         assertFalse(app.getPet());
     }
 
+    @org.junit.Test
     public void getOldAge()
     {
         App app = new App(10);
         assertEquals(40, app.getOldAge());
     }
 
-
+    @org.junit.Test
     public void testSetGetPetName()
     {
         App app = new App();
