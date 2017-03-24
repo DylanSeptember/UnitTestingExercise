@@ -98,5 +98,29 @@ public class AppTest
         assertEquals("Snoopy", app.getPetName());
     }
 
+    public void testSetGetHeight()
+    {
+        App app = new App();
+        app.setHeight(15.6f);
+        assertEquals(15.6f,app.getHeight());
+    }
+
+    public void testNotNull()
+    {
+        App app1 = new App(29,8,1995);
+       // App app2 = new App();
+       // App app2 = new App(29,8,1995);
+        app1.setDayMonthYear("29-8-1995");
+       // assertEquals(app1,app2);
+       // assertNull(!app1);
+        assertNotNull(app1.getOldAge());
+    }
+
+
+    public void testNullness()
+    {
+        App app = new App();
+        assertNull(app.getName());
+    }
 
 }

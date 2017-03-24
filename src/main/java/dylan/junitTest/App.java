@@ -14,13 +14,14 @@ public class App
    private int age;
    private String name;
    private String surname;
+   private float height;
    private int day;
    private int month;
    private int year;
    private Boolean pet;
    private String petName;
    private int oldAge;
-
+   private String[] rs;
 
 
     public static void main( String[] args )
@@ -40,6 +41,9 @@ public class App
         System.out.println("Enter Your Surname: ");
         a.setSurname(input.next());
 
+        System.out.println("Enter Your Height(in feet): ");
+        a.setHeight(input.nextFloat());
+
         System.out.println("Do You Own A Pet?(Y/N): ");
         a.setPet(input.next());
 
@@ -50,6 +54,7 @@ public class App
             System.out.println( "Hello World!" );
             System.out.println( "My name is " + a.getName());
             System.out.println( "My surname is " + a.getSurname());
+            System.out.println( "I am " + a.getHeight() + "feat tall");
             System.out.println( "I am " + a.getAge() + " years old");
             System.out.println( "In 30 years i will be "  + a.getOldAge() + " years old");
             System.out.println( "My pets name is " + a.getPetName());
@@ -86,6 +91,8 @@ public class App
 
     }
 
+
+
     public void agePlus()
     {
         oldAge = age + 30;
@@ -93,12 +100,13 @@ public class App
 
     public void setDayMonthYear(String dob)
     {
-        String[] rs = dob.split("-");
+        rs = dob.split("-");
         day = Integer.parseInt(rs[0]);
         month = Integer.parseInt(rs[1]);
         year = Integer.parseInt(rs[2]);
-
-        System.out.println("date :" + day + "-" + month + "-" +year);
+System.out.println(rs[0] + rs[1] + rs[2]);
+System.out.println(getRs()[0] + getRs()[1] + getRs()[2]);
+        //System.out.println("date :" + day + "-" + month + "-" +year);
     }
 
     public void calcAge()
@@ -145,14 +153,14 @@ public class App
 
     }
 
+    public void setHeight(float h){
+        height = h;
+    }
+
     public void setPetName(String pName)
     {
         petName = pName;
     }
-
-
-
-
 
     public int getOldAge()
     {
@@ -164,6 +172,14 @@ public class App
     {
         calcAge();
         return age;
+    }
+
+    public float getHeight()
+    {
+        return height;
+    }
+    public String[] getRs(){
+        return rs;
     }
 
     public String getName()
@@ -180,10 +196,12 @@ public class App
     {
         return petName;
     }
+
     public Boolean getPet()
     {
         return pet;
     }
+
     public int getDay(){
         return day;
     }
